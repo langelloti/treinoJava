@@ -1,0 +1,57 @@
+package exercicioFundamentos;
+
+import java.util.Scanner;
+
+public class DesafioFundamentosFinal {
+ 
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Digite o primeiro numero: ");
+		String numero1 = scanner.nextLine();
+		
+		System.out.println("Digite o segundo numero: ");
+		String numero2 = scanner.nextLine();
+		
+		double valor1 = Double.parseDouble(numero1);
+		double valor2 = Double.parseDouble(numero2);
+		
+		double soma = valor1 + valor2;
+		double sub = valor1 - valor2;
+		double mult = valor1 * valor2;
+		double div = valor1 / valor2;
+		
+		//menu de opções
+		System.out.println("Operações disponíveis:\n ");
+		System.out.println("1- Soma");
+		System.out.println("2- Subtração");
+		System.out.println("3- Multiplicação");
+		System.out.println("4- Divisão");
+		System.out.println("\nQual das opções você deseja executar?");
+		
+		String opcaoEscolhida = scanner.nextLine();
+		int option = Integer.parseInt(opcaoEscolhida);
+		
+		//abertura de switch parecida com C++
+		switch(option) {
+		case 1:
+			System.out.println("Resultado da soma: " + soma);
+			break;
+		case 2:
+			System.out.println("Resultado da subtração: " + sub);
+			break;
+		case 3: 
+			System.out.println("Resultado da multiplicação: " + mult);
+			break;
+		case 4:
+			if (valor2 != 0) {
+				System.out.println("Resultado da divisão: ");
+			}else {
+				System.out.println("Operação inválida: divisão por zero não permitida.");
+			}break;
+			default:
+				System.out.println("Opção inválida. Por favor escolha dentro do intervalo de 1 a 4.");
+		}scanner.close();
+	}
+	
+}
